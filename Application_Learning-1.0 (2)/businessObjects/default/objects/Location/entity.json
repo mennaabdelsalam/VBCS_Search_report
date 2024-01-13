@@ -1,0 +1,75 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": true,
+            "key": true,
+            "oid": "0198cc1b-7ebd-4301-bd84-bd45445732e6",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": true,
+            "oid": "eca9e255-7040-4a8b-b7fa-50a573830494",
+            "displayLabel": "Created"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": true,
+            "oid": "96e0e37a-48e4-49ca-8933-043488a7563a",
+            "displayLabel": "Last Updated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": true,
+            "oid": "a9cea55a-bf21-4080-9efb-d0554238c0f4",
+            "displayLabel": "Created By"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": true,
+            "oid": "e8df4955-2016-47b1-b38c-489ef657b7d4",
+            "displayLabel": "Last Updated By"
+        },
+{
+            "type": "number",
+            "hidden": true,
+            "name": "abcsChangeNumber",
+            "internal": true,
+            "oid": "67ebb7fe-68f3-469e-9bec-d16e1d4f8a7f",
+            "displayLabel": "<internal>"
+        },
+{
+            "type": "string",
+            "name": "city",
+            "oid": "ec7988c5-0a07-4fb5-afa4-6f271c583b9c",
+            "displayLabel": "city"
+        },
+        {
+            "type": "string",
+            "name": "countryId",
+            "oid": "c9168c02-bd67-4b4e-bc82-a7121b6c2c52",
+            "displayLabel": "country_id"
+        }
+    ],
+    "name": "Location",
+    "oid": "62becb53-88e2-478a-8e38-9abe2283bfa5",
+    "displayLabel": "Location",
+    "relationships": [
+        {
+            "name": "departmentCollection",
+            "reverseRelationship": "locationRelationObject",
+            "targetEntity": "Department",
+            "type": "incoming",
+            "exposeAccessor": false,
+            "displayField": "city"
+        }
+    ]
+}

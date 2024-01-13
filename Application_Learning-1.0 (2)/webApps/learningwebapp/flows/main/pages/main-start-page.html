@@ -1,0 +1,57 @@
+<div class="oj-flex" style="margin-top:10px; background-color:white">
+  <oj-collapsible class="oj-flex-item oj-sm-12 oj-md-12" expanded="true">
+    <h6 slot="header">Search Criteria</h6>
+    <div class="oj-flex oj-sm-flex-initial" style="margin-top:25px">
+      <div class="oj-flex-item oj-sm-12 oj-md-11">
+        <oj-form-layout max-columns="2" label-edge="start" columns="2" direction="row">
+          <oj-label-value>
+            <oj-label slot="label" for="iDSearchEmployeeID">Employee ID</oj-label>
+            <oj-input-text id="iDSearchEmployeeID" label-hint="Enter Employee ID" slot="value"
+              value="{{ $variables.vPageSearchCriteria.EmployeeID }}"></oj-input-text>
+          </oj-label-value>
+          <oj-label-value>
+            <oj-label slot="label" for="iDSearchSalaryRadioSet"><span style="color:blue;">*</span>Salary
+              
+            </oj-label>
+            <oj-radioset id="iDSearchSalaryRadioSet" label-hint="Radio Button Set" slot="value" required="true"
+              class="oj-choice-direction-row" value="{{ $variables.vPageSearchCriteria.SalaryRadioSetValue }}">
+              <oj-option value="YES">Y</oj-option>
+              <oj-bind-if test='[[ $variables.vPageSearchCriteria.SalaryRadioSetValue == "YES" ]]'>
+                <oj-input-text id="iDSearchSalaryValue" label-hint="Enter Salary" min="1" max=""
+                  virtual-keyboard="number" class="oj-form-control-max-width-sm oj-form-control-width-sm"
+                  value="{{ $variables.vPageSearchCriteria.Salary }}"></oj-input-text>
+              </oj-bind-if>
+              <oj-option value="NO">N</oj-option>
+            </oj-radioset>
+          </oj-label-value>
+        </oj-form-layout>
+      </div>
+      <div class="oj-flex-item oj-sm-12 oj-md-12">
+        <oj-button label="Search" style="margin-left:40%;margin-top:25px;width:200px"
+          class="oj-button-full-width oj-button-sm" on-oj-action="[[$listeners.buttonAction]]"></oj-button>
+      </div>
+    </div>
+  </oj-collapsible>
+</div>
+<div class="oj-flex">
+  <div class="oj-flex oj-sm-12 oj-md-12">
+    <hr class="oj-flex oj-sm-12 oj-md-12">
+  </div>
+</div>
+<div class="oj-flex">
+  <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12" selection-mode.column="single"
+    data="[[$variables.employeeListSDP]]"
+    columns='[{"headerText":"Id","field":"id"},{"headerText":"first_name","field":"firstName"},{"headerText":"last_name","field":"lastName"},{"headerText":"email","field":"email"},{"headerText":"department","field":"department"}]'></oj-table>
+</div>
+<oj-dialog style="display:none;width:500px; height:200px;font-size:0.8rem" dialog-title="Searching"
+  id="oj-dialog-searchingProgress" cancel-behavior="icon">
+  <div slot="body">
+    <div class="oj-flex">
+      <div class="oj-flex-item oj-sm-12 oj-md-4"></div>
+      <oj-progress-bar class="oj-flex-item oj-sm-12 oj-md-6" value="-1"></oj-progress-bar>
+    </div>
+  </div>
+  <div slot="footer">
+  </div>
+</oj-dialog>
+

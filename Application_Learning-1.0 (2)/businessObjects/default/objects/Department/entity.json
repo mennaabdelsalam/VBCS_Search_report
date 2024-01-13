@@ -1,0 +1,90 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": true,
+            "key": true,
+            "oid": "dd63e7e4-afcc-4b9f-95ac-e8318575cf6c",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": true,
+            "oid": "f983d4a1-1ac0-46c0-a40f-0ff35434fd19",
+            "displayLabel": "Created"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": true,
+            "oid": "8a75b82f-9ef0-4679-a6ec-472537ab91c0",
+            "displayLabel": "Last Updated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": true,
+            "oid": "e2da6494-0957-42d1-8e43-76c2d688fc78",
+            "displayLabel": "Created By"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": true,
+            "oid": "309e43a2-d771-4e31-9df7-925d8dbfcdab",
+            "displayLabel": "Last Updated By"
+        },
+{
+            "type": "number",
+            "hidden": true,
+            "name": "abcsChangeNumber",
+            "internal": true,
+            "oid": "351f7b6d-967d-490d-bb5d-32bd24d1a522",
+            "displayLabel": "<internal>"
+        },
+        {
+            "type": "string",
+            "name": "name",
+            "oid": "47c3d1e3-2494-4eed-89a9-2aab77b9b5fa",
+            "displayLabel": "name"
+        }        ,
+{
+            "type": "number",
+            "name": "location",
+            "oid": "b36d9200-fa60-44e0-ab24-cb963547d8ed",
+            "displayLabel": "location"
+        },
+        {
+            "type": "reference",
+            "name": "locationRelation",
+            "oid": "dab7e5d3-e8fd-4091-a08c-9b1242139d22",
+            "displayLabel": "LocationRelation"
+        }
+    ],
+    "name": "Department",
+    "oid": "7cfde597-2d38-47ed-a358-d428cde91d23",
+    "displayLabel": "Department",
+    "relationships": [
+{
+            "name": "employeeCollection",
+            "reverseRelationship": "departmentRelationObject",
+            "targetEntity": "Employee",
+            "type": "incoming",
+            "exposeAccessor": false,
+            "displayField": "name"
+        },
+        {
+            "name": "locationRelationObject",
+            "reverseRelationship": "departmentCollection",
+            "targetEntity": "Location",
+            "type": "outgoing",
+            "exposeAccessor": true,
+            "mappingField": "locationRelation",
+            "deleteRule": "restrict"
+        }
+    ]
+}

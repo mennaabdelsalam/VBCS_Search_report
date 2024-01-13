@@ -1,0 +1,113 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": true,
+            "key": true,
+            "oid": "7716e8bf-67c2-4cbd-bc05-d5fc11a52bc8",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": true,
+            "oid": "5ff4581b-28d6-46c7-9b6c-b2b130e326ee",
+            "displayLabel": "Created"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": true,
+            "oid": "b2b8e306-d15a-4c81-8070-4be7734bdddc",
+            "displayLabel": "Last Updated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": true,
+            "oid": "3a5e1c26-2980-4def-b12e-d7d0c584f95d",
+            "displayLabel": "Created By"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": true,
+            "oid": "8ae098c8-42b8-47b4-9db7-62f3d45f15ad",
+            "displayLabel": "Last Updated By"
+        },
+{
+            "type": "number",
+            "hidden": true,
+            "name": "abcsChangeNumber",
+            "internal": true,
+            "oid": "7bb85060-221e-4edc-afd0-81e444fe251a",
+            "displayLabel": "<internal>"
+        },
+        {
+            "type": "string",
+            "name": "firstName",
+            "oid": "3a98ae52-626d-40f2-a364-b591eeb23614",
+            "displayLabel": "first_name"
+        }        ,
+        {
+            "type": "string",
+            "name": "lastName",
+            "oid": "015db49b-46d9-4557-a1f5-b55dca080b6f",
+            "displayLabel": "last_name"
+        }        ,
+        {
+            "type": "string",
+            "name": "email",
+            "oid": "7f1f230f-ab20-422a-82aa-cd24c9fa666b",
+            "displayLabel": "email"
+        }        ,
+        {
+            "type": "string",
+            "name": "phoneNumber",
+            "oid": "5205b2d0-1a07-4acb-8eab-b4bcf0a92197",
+            "displayLabel": "phone_number",
+            "format": "phone"
+        }        ,
+        {
+            "type": "date",
+            "name": "hireDate",
+            "oid": "8da7a1f3-cc37-4d30-b118-6eda440c01c8",
+            "displayLabel": "hire_date"
+        }        ,
+        {
+            "type": "number",
+            "name": "salary",
+            "oid": "7fee4c03-c782-4f88-8022-ff8b6ec89634",
+            "displayLabel": "salary"
+        }        ,
+        {
+            "type": "number",
+            "name": "department",
+            "oid": "e80d8427-e8f4-4a3b-8b76-4f7a7af929fc",
+            "displayLabel": "department"
+        }        ,
+        {
+            "type": "reference",
+            "name": "departmentRelation",
+            "oid": "c8b412e7-01af-4d5a-8799-737e44236286",
+            "displayLabel": "DepartmentRelation"
+        }
+    ],
+    "name": "Employee",
+    "oid": "572427f7-6bd1-4901-898e-2fb20be13136",
+    "displayLabel": "Employee",
+    "relationships": [
+        {
+            "name": "departmentRelationObject",
+            "reverseRelationship": "employeeCollection",
+            "targetEntity": "Department",
+            "type": "outgoing",
+            "exposeAccessor": true,
+            "mappingField": "departmentRelation",
+            "deleteRule": "restrict"
+        }
+    ]
+}
